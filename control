@@ -1,0 +1,9 @@
+Package: ch.marcoroth.shortlook.plugin.covers.mixcloud
+Name: Mixcloud covers for ShortLook
+Depends: mobilesubstrate, co.dynastic.ios.tweak.shortlook
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Show Mixcloud covers in ShortLook when you receive a Mixcloud notification!
+Maintainer: Marco Roth
+Author: Marco Roth
+Section: Tweaks (ShortLook)
