@@ -1,6 +1,6 @@
-#import "MixcloudContactPhotoProvider.h"
+#import "MixcloudCoverProvider.h"
 
-@implementation MixcloudContactPhotoProvider
+@implementation MixcloudCoverProvider
   - (DDNotificationContactPhotoPromiseOffer *)contactPhotoPromiseOfferForNotification:(DDUserNotification *)notification {
     NSString *baseURL = @"https://mixcloud.com/";
     NSString *showId = [notification userInfo][@"key"];
@@ -16,10 +16,10 @@
       NSTextCheckingResult *result = [regex firstMatchInString:html options:0 range:NSMakeRange(0, html.length)];
 
       if (result) {
-        NSString *imageURL = [html substringWithRange:[result rangeAtIndex:1]];
-        UIImage *image = [UIImage imageWithContentsOfFile:imageURL];
+        NSString *imageURLStr = [html substringWithRange:[result rangeAtIndex:1]];
+        NSURL *imageURL = [NSURL URLWithString:imageURLStr];
 
-        return [NSClassFromString(@"DDNotificationContactPhotoPromiseOffer") offerInstantlyResolvingPromiseWithPhotoIdentifier:imageURL image:image];
+        return [NSClassFromString(@"DDNotificationContactPhotoPromiseOffer") offerDownloadingPromiseWithPhotoIdentifier:imageURLStr fromURL:imageURL];
       }
     }
 

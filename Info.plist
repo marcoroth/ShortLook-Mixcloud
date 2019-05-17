@@ -6,7 +6,7 @@
     <string>Mixcloud</string>
     <key>DDNotificationExternalProviderClasses</key>
     <dict>
-      <key>MixcloudContactPhotoProvider</key>
+      <key>MixcloudCoverProvider</key>
       <string>com.mixcloud.iphone</string>
     </dict>
     <key>DDNotificationExternalProviderAPIVersion</key>

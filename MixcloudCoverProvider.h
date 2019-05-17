@@ -1,5 +1,5 @@
 #import "ShortLook-API.h"
 
-@interface MixcloudContactPhotoProvider : NSObject <DDNotificationContactPhotoProviding>
+@interface MixcloudCoverProvider : NSObject <DDNotificationContactPhotoProviding>
 - (DDNotificationContactPhotoPromiseOffer *)contactPhotoPromiseOfferForNotification:(DDUserNotification *)notification;
 @end
