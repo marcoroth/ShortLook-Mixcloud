@@ -12,7 +12,7 @@
     NSString *html = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 
     if (error == nil){
-      NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"m-background-image=\"(.+)\" m-background" options:0 error:&error];
+      NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<meta name=\"twitter:image\" data-meta-side-effect=\"true\" content=\"(.+)\">" options:0 error:&error];
       NSTextCheckingResult *result = [regex firstMatchInString:html options:0 range:NSMakeRange(0, html.length)];
 
       if (result) {
